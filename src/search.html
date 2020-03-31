@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title>Search Engine in PHP</title>
+  </head>
+  <body>
+    <form action="result.php" method="post">
+        <input type="text" name="user_query" placeholder="Type Airline OR Aircraft">
+        <input type="submit" name="search" value="Search Now">
+    </form>
+  </body>
+</html>
+
+
+
+
+- Using bootstrap ( create drop down tables )
+    - Airlines
+    - AIRPORT ( To and from )
+    - Dates ( to and from )
+
+
+- Select statements form the inputs.
+
+
+"	<?php
+		$conn = mysqli_connect('localhost','root','y@c3iU6GhIY?','csv_db');
+		if ($conn-> connect_error){
+			die("Connection Failed:". $conn-> connect_error);
+		}
+	$sql = "SELECT TE, AIRLINE, FLIGHT_NUM, ORIGIN_AIRPORT, DESTINATION_AIRPORT,
+			DEPARTURE_TIME, DEPARTURE_DELAY, AIR_TIME
+			DISTANCE, ARRIVAL_TIME, ARRIVAL_DELAY from flights
+        where AIRLINE = $Airline and
+        airpot_to = .. and
+        airport_from = .. and
+        dates = .. ";
+
+	$result = $conn-> query($sql);
+
+  "
+  table display..

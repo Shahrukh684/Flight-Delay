@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta>
+    <title>All Flight Data</title>
+  </head>
+  <body>
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Airline</th>
+      <th>Origin Aiport</th>
+      <th>Destination Airport</th>
+      <th>Scheduled Departure</th>
+      <th>Departure Delay</th>
+      <th>Distance Travelled</th>
+      <th>Elapsed Time</th>
+      <th>Arrival Time</th>
+      <th>Arrival Delay</th>
+    </tr>
+    <?php
+    $conn = mysqli_connect("localhost", "root", "", "isi490")
+    if ($conn-> connect_error) {
+      die("connection failed:". $conn-> connect_error);
+    }
+
+    $sql= "SELECT TE, AIRLINE, ORIGIN_AIRPORT from table 1";
+    $result = $conn-> query($sql);
+
+    if ($result-> num_rows > 0) {
+      while ($row = $result -> fetch_assoc()) {
+        echo "<tr><td>". $row["te"] ."<tr><td>". $row["AIRLINE"] ."<tr><td>". $row["ORIGIN_AIRPORT"] ."</td></tr>";
+      }
+      echo "</table>"
+    }
+    else {
+      echo "0 result";
+    }
+
+    $conn -> close();
+    ?>
+  </body>
+</html>

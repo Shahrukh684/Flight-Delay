@@ -1,0 +1,35 @@
+<?php
+
+mysql_connect('localhost', 'root', '');
+
+mysql_select_db('isi490');
+
+$sql='SELECT * FROM table 1';
+
+$records=mysql_query($sql);
+
+?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>All Datas</title>
+  </head>
+  <body>
+    <table width='600' border='1' cellpadding='1' cellspacing='1'>
+      <tr>
+        <th>Date</th>
+        <th>Airline</th>
+        <th>Origin Aiport</th>
+        <th>Destination Airport</th>
+
+        <?php
+          while ($table 1=mysql_fetch_assoc($records)){
+            echo "<tr>";
+            echo "<td>".$table 1['TE']."</td>";
+            echo "</tr>";
+          }
+        ?>
+      </tr>
+    </table>
+  </body>
+</html>
